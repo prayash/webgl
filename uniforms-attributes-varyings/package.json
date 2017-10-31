@@ -1,0 +1,17 @@
+{
+  "name": "talk-beyond-the-dom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "budo --host=localhost example.js --live",
+    "start-complete": "budo --host=localhost example-complete.js --live"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gl-mat4": "1.1.4",
+    "glslify": "6.0.1",
+    "regl": "^1.3.0"
+  }
+}
