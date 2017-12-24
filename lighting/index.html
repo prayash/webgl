@@ -23,13 +23,16 @@
     // The transformation of the perspective projection
     uniform mat4 projection;
 
+    // The normal matrix
+    uniform mat3 normalMatrix;
+
     // Pass the normal down to the fragment shader
     varying vec3 vNormal;
     
     void main() {
       // gl_Position = projection * view * model * vec4( position, 1.0 );
       
-      vNormal = normal;
+      vNormal = normalMatrix * normal;
       gl_Position = projection * view * model * vec4( position, 1.0 );
     }
   </script>

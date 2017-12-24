@@ -1,6 +1,7 @@
 class Sketch {
   constructor() {
     console.log(MDN)
+
     // Prep the canvas
     this.canvas = document.getElementById('canvas')
     this.canvas.width = window.innerWidth
@@ -16,10 +17,10 @@ class Sketch {
 
     this.color = [1.0, 0.4, 0.7, 1.0]
 
-    //These matrices don't change and only need to be computed once
+    // These matrices don't change and only need to be computed once
     this.computeProjectionMatrix()
     this.computeViewMatrix()
-    //the model matrix gets re-computed every draw call
+    // the model matrix gets re-computed every draw call
 
     // Start the drawing loop
     this.draw()
@@ -78,6 +79,7 @@ class Sketch {
       model: gl.getUniformLocation(this.webglProgram, 'model'),
       view: gl.getUniformLocation(this.webglProgram, 'view'),
       projection: gl.getUniformLocation(this.webglProgram, 'projection'),
+      normalMatrix: gl.getUniformLocation(this.webglProgram, 'normalMatrix'),
       color: gl.getUniformLocation(this.webglProgram, 'color'),
 
       // Save the attribute location
@@ -128,7 +130,7 @@ class Sketch {
   }
 
   computerNormalMatrix() {
-    var modelView = MDN.multiplyMatrices(
+    let modelView = MDN.multiplyMatrices(
       this.transforms.view,
       this.transforms.model
     )
@@ -173,6 +175,12 @@ class Sketch {
     )
     gl.uniformMatrix4fv(this.locations.view, false, this.transforms.view)
     gl.uniformMatrix4fv(this.locations.model, false, this.transforms.model)
+    gl.uniformMatrix3fv(
+      this.locations.normalMatrix,
+      false,
+      this.transforms.normalMatrix
+    )
+
     gl.uniform4fv(this.locations.color, this.color)
 
     // Set the positions attribute
