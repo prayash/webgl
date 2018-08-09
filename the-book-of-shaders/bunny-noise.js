@@ -39,6 +39,7 @@ const draw = regl({
 
       // This is going to cause random distortions
       // TODO: Why is the 4th element of the vector a mysterious 0.0?
+      // Answer: Cuz the final 1.0 makes it easy to calculate the final 4x1!
       // position2 += snoise4(vec4(position2, 0.0));
 
       // Spike towards the direction of the normal
