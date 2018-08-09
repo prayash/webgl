@@ -1,7 +1,7 @@
 {
   "name": "book-of-shaders-regl",
   "version": "1.0.0",
-  "description": "",
+  "description": "The Book of Shader exercises in regl",
   "main": "index.js",
   "scripts": {
     "start": "budo --host=localhost"
@@ -16,9 +16,11 @@
   "dependencies": {
     "angle-normals": "^1.0.0",
     "babel-core": "^6.26.3",
-    "babel-preset-es2015": "^6.24.1",
+    "babel-plugin-glslify": "^2.0.0",
+    "babel-preset-env": "^1.7.0",
     "babelify": "^8.0.0",
     "bunny": "^1.0.1",
+    "glsl-noise": "^0.0.0",
     "perspective-camera": "^2.0.1"
   },
   "browserify": {
