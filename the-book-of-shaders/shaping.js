@@ -17,7 +17,7 @@ const drawPlane = regl({
     void main() {
       vec3 position2 = position;
       position2.y += 0.1 * sin(3.0 * time + position.x * 12.5);
-      position2.y += 0.1 * cos(2.0 * time + position.z * 7.5);
+      position2.y += 0.05 * cos(1.0 * time + position.z * 7.5);
       vPosition = position2;
 
       gl_Position = projection * view * vec4(position2, 1);
@@ -29,8 +29,6 @@ const drawPlane = regl({
     varying vec3 vPosition;
 
     void main() {
-      
-
       gl_FragColor = vec4(vPosition.y * 5.0, vPosition.x, vPosition.z, 1.0);
     }
   `,

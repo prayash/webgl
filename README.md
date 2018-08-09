@@ -6,7 +6,8 @@ WebGL (Web Graphics Library) is a JavaScript API for rendering 3D graphics on th
 
 ## Table of Contents
 
-* [Lighting](lighting/README.md)
-* [Matrix Math](matrix-math/README.md)
-* [Model View Projection](model-view-projection/README.md)
-* [Shaders](shaders/README.md)
+- [Lighting](lighting/README.md)
+- [Matrix Math](matrix-math/README.md)
+- [Model View Projection](model-view-projection/README.md)
+- [Shaders](shaders/README.md)
+- [The Book of Shaders]()

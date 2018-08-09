@@ -1,0 +1,30 @@
+{
+  "name": "book-of-shaders-regl",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "budo --host=localhost"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gl-mat4": "1.1.4",
+    "glslify": "6.0.1",
+    "regl": "^1.3.0"
+  },
+  "dependencies": {
+    "angle-normals": "^1.0.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^8.0.0",
+    "bunny": "^1.0.1",
+    "perspective-camera": "^2.0.1"
+  },
+  "browserify": {
+    "transform": [
+      "babelify",
+      "glslify"
+    ]
+  }
+}
